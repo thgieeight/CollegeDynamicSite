@@ -1,0 +1,64 @@
+<th:block th:insert="header.html"></th:block> 
+
+<!-- content start -->
+
+<!--start inner banner part -->
+<div class="menubar">
+    <div class="container">
+         <div class="row">
+            <div class="col-lg-6">
+                <div class="menu-header"><h1>Contact</h1></div>
+            </div>
+            <div class="col-lg-6">
+                <h5><a href="home.html">Home</a> » Contact</h5>
+            </div>
+            </div>
+    </div>
+</div>
+<!-- End inner banner part -->
+
+
+
+<!-- this is content start -->
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-sm-12 col-md-6 col-lg-6">
+    <center><u> <h2>Map</h1></u></center>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.9955165699344!2d81.61001747448637!3d28.055161510067087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39986700607b9a5d%3A0x24ddb1a9589109af!2sCodeBloom%20InfoTech!5e0!3m2!1sen!2snp!4v1718941292858!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+    <div class="col-6 col-sm-12 col-md-6 col-lg-6">
+      <center><u> <h2>Form</h1></u></center>
+        <form action="/contactsave" method="post">
+          <div class="mb-3">
+            <label for="fullname" class="form-label"><b>Your Name:</b></label>
+            <input type="text" class="form-control" name="cus_name" placeholder="please enter your full name">
+          </div>
+          <div class="mb-3">
+            <label for="fullname" class="form-label"><b>Address:</b></label>
+            <input type="text" class="form-control" name="cus_address" placeholder="please enter your Address">
+          </div>
+          <div class="mb-3">
+            <label for="fullname" class="form-label"><b>Contact:</b></label>
+            <input type="number" class="form-control" name="cus_phone" placeholder="please enter your Contact">
+          </div>
+          <div class="mb-3">
+           <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" name="cus_message"  rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+      
+    </div>
+
+    
+  </div>
+  
+</div>
+<!-- end content -->
+
+
+
+
+<th:block th:insert="footer.html"></th:block> 

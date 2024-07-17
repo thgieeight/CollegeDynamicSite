@@ -1,0 +1,62 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.foot-li{
+	display: inline-block;
+	margin: 10px;
+}
+.bg-image{
+	height: 500px;
+	width: 100%;
+	background-image: url('../img/img1.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+}
+.team-card{
+	border-radius: 50% !important;
+}
+.team-card{
+	border-radius: 50% !important;
+}
+.team-card{
+	border-radius: 50% !important;
+}
+
+.menubar::after {
+    background: rgba(1, 1, 1, 0.7) none repeat scroll 0 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.menubar{
+    background: url('../img/img1.jpg') no-repeat;
+    padding:55px 0;
+    color:#fff;
+    position: relative;
+    margin-bottom: 50px;
+    background-size: cover;
+}
+.menubar .menu-header h1{
+    float:left;
+    text-transform:uppercase;
+    color: #ffffff;
+    position: relative;
+    z-index: 3;
+}
+.menubar h5{
+    font-size: 17px;
+    position: relative;
+    z-index: 2;
+    text-align: right;
+}
+.menubar h5 a{
+    color: #cccccc;
+}
+
+.notice-b::before{
+	content:"➡️";
+}

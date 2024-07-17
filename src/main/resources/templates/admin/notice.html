@@ -1,0 +1,32 @@
+<th:block th:insert="admin/header.html"></th:block> 
+
+<div class="container my-4">
+<a href="/admin/notice/add"><button class="btn btn-success">Add</button></a>
+<div class="Container my-3">
+<table class="table table-striped">
+<tr>
+<th>S.no</th>
+<th>Notice Name</th>
+<th>Added Date</th>
+<th>Image</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+<tr>
+<tr th:each="l : ${noticelist}">
+<td>[[${l.id}]]</td>
+<td>[[${l.noticename}]]</td>
+<td>[[${l.adddate}]]</td>
+<td><img th:src="@{'/images/' + ${l.noticeimg}}" alt="cat Photo" width="50" height="50"></td>
+<td><span th:if="${l.status == 1}">Active</span><span th:if="${l.status == 0}">Inactive</span></td>
+
+<td>
+<a th:href="@{/admin/notice/edit(id=${l.id})}"><input type="submit" value="Edit" class="btn btn-success"></a>
+<a th:href="@{/admin/notice/delete(id=${l.id})}" onclick="return confirm('Are you sure you want to delete?')"><input type="submit" value="Delete" class="btn btn-danger"></a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+
+<th:block th:insert="admin/Footer.html"></th:block> 

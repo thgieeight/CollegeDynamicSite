@@ -1,0 +1,38 @@
+<th:block th:insert="header.html"></th:block> 
+
+
+
+<!-- content start -->
+
+<!--start inner banner part -->
+<div class="menubar">
+    <div class="container">
+         <div class="row">
+            <div class="col-lg-6">
+                <div class="menu-header"><h1>Notice</h1></div>
+            </div>
+            <div class="col-lg-6">
+                <h5><a href="home.html">Home</a> » Notice</h5>
+            </div>
+            </div>
+    </div>
+</div>
+<!-- End inner banner part -->
+
+<!-- content start -->
+<div class="container">
+  <strong><h4>Notice:</h4></strong>
+  <hr>
+  <div th:each="l : ${noticelist}">
+    <div th:if="${l.status == 1}">
+      <p>
+  <a th:href="@{'/images/' + ${l.noticeimg}}" target="_blank">[[${l.noticename}]]</a>
+        <span class="text-warning">date: [[${l.adddate}]]</span>
+      </p>
+    </div>
+  </div>
+  
+  </div>
+<!-- end content -->
+
+<th:block th:insert="footer.html"></th:block> 
