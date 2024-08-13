@@ -22,70 +22,39 @@
 
 
 <div class="container mt-3">
-	<div class="row">
-		<div class=" col-4 col-sm-12 col-md-6 col-lg-4">
-			<img src="images/img1.jpg" class="image-fluid">
-			
-		</div>
-		<div class=" col-8 col-sm-12 col-md-6 col-lg-8">
-			<center><strong><h3>About Page</h3></strong></center>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a data-bs-toggle="collapse" data-bs-target="#demo">See more.......</a> 
-			<div id="demo" class="collapse">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</div>
-		</p>
-		
-
-
-			
-		</div>
-	</div>
-
-	
-</div>
-
-<!-- tema members -->
- <div class="container mt-5">
- 	<div class="row">
- 		<center><strong><h3><u>Our Team</u></h3></strong></center>
- 		<div class="col-4 mt-3 ">
- 			<div class="" style="width: 18rem;">
-  <img src="images/img1.jpg" class="card-img-top team-card" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <div class="row" th:each="l : ${aboutlist}">
+    <div class="col-4 col-sm-12 col-md-6 col-lg-4"  th:if="${l.status == 1}">
+      <!-- Dynamically set image src -->
+      <img th:src="@{'/images/' + ${l.aboutimage}}" class="img-fluid" alt="About Image">
+    </div>
+    <div class="col-8 col-sm-12 col-md-6 col-lg-8">
+      <center><strong><h3>About Page</h3></strong></center>
+      <!-- Dynamically set paragraph text -->
+      <p>[[${l.abouttext}]]</p>
+      <!-- Dynamic "See more" content -->
+      <a data-bs-toggle="collapse" data-bs-target="#demo">See more.......</a>
+      <div id="demo" class="collapse">
+        <p>[[${l.abouttext}]]</p>
+      </div>
+    </div>
   </div>
 </div>
- 		</div>
 
- 		<div class="col-4 mt-3">
- 			<div class="" style="width: 18rem;">
-  <img src="images/img1.jpg" class="card-img-top team-card" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+ <!-- tema members -->
+<div class="container mt-5">
+  <div class="row">
+    <center><strong><h3><u>Our Team</u></h3></strong></center>
+    <div class="col-4 mt-3" th:each="l : ${teamlist}">
+      <div style="width: 18rem;" th:if="${l.status == 1}">
+        <img th:src="@{'/images/' + ${l.teamimage}}" class="card-img-top team-card d-block w-100" alt="...">
+        <div class="card-body">
+          <p class="card-text" th:text="${l.teamtext}"></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
- 		</div>
-
- 		<div class="col-4 mt-3">
- 			<div class="" style="width: 18rem;">
-  <img src="images/img1.jpg" class="card-img-top team-card" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
- 		</div>
- 	</div>
- </div>
 
 
 

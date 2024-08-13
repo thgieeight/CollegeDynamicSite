@@ -4,7 +4,34 @@
 
 <div class="container">
 <div class="row">
-<h1 class="text-center" style="padding:200px">welcome to admin panel</h1>
+<h1 class="text-center">welcome to admin panel</h1>
+
+<div class="container my-4">
+<a href="/admin/home/add"><button class="btn btn-success">Add</button></a>
+<div class="Container my-3">
+<table class="table table-striped">
+<tr>
+<th>S.no</th>
+<th>Home Name</th>
+<th>Image</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+<tr>
+<tr th:each="l : ${homelist}">
+<td>[[${l.id}]]</td>
+<td>[[${l.hometext}]]</td>
+<td><img th:src="@{'/images/' + ${l.homeimage}}" alt="cat Photo" width="50" height="50"></td>
+<td><span th:if="${l.status == 1}">Active</span><span th:if="${l.status == 0}">Inactive</span></td>
+
+<td>
+<a th:href="@{/admin/home/edit(id=${l.id})}"><input type="submit" value="Edit" class="btn btn-success"></a>
+<a th:href="@{/admin/home/delete(id=${l.id})}" onclick="return confirm('Are you sure you want to delete?')"><input type="submit" value="Delete" class="btn btn-danger"></a>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 

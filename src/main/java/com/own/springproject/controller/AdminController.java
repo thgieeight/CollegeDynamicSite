@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.own.springproject.service.ContactService;
+import com.own.springproject.service.HomeService;
 
 @Controller
 @RequestMapping("/admin")
@@ -17,10 +18,18 @@ public class AdminController {
 	@Autowired
 	public ContactService contactser;
 	
+	@Autowired
+	public HomeService homeser;
 	
 	@GetMapping("/")
 	public String getlogin() {
 		return "admin/login";
+	}
+	
+	@GetMapping("/home")
+	public String gethome(Model model) {
+		model.addAttribute("homelist", homeser.getallhome());
+		return "admin/home";
 	}
 	
 	@PostMapping("/login")
